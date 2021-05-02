@@ -27,4 +27,8 @@
     <Folder Include="Validators\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Taxi24.Infrastructure\Taxi24.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

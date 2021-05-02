@@ -49,6 +49,8 @@ namespace Taxi24
             services.AddControllers(options =>
             {
                 options.Filters.Add(new ValidationFilter());
+                options.Filters.Add(new ExceptionFilter());
+
             }).AddFluentValidation(options =>
             {
                 options.RegisterValidatorsFromAssemblyContaining<ValidationFilter>();

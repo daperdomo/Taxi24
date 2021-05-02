@@ -27,8 +27,4 @@
     <ProjectReference Include="..\Taxi24.Infrastructure\Taxi24.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
