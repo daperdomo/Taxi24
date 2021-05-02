@@ -16,5 +16,11 @@ namespace Taxi24.Controllers
         {
             return Ok(UnitOfWork.DriverService.GetAvailables());
         }
+
+        [HttpGet]
+        public IActionResult GetNearAvailables(double latitude, double longitude)
+        {
+            return Ok(UnitOfWork.DriverService.GetAvailablesInRadious(latitude, longitude, 3));
+        }
     }
 }

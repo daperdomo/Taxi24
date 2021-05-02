@@ -15,13 +15,16 @@ namespace Taxi24.Domain.Services
     {
         private readonly IRepository<Driver> driverRepository;
         private readonly IMapper mapper;
+        private readonly IDistanceHelper distanceHelper;
 
         public DriverService(
             IRepository<Driver> _driverRepository,
-            IMapper _mapper)
+            IMapper _mapper,
+            IDistanceHelper _distanceHelper)
         {
             driverRepository = _driverRepository;
             mapper = _mapper;
+            distanceHelper = _distanceHelper;
         }
 
         public IEnumerable<DriverViewModel> GetAvailables()
@@ -33,7 +36,11 @@ namespace Taxi24.Domain.Services
 
         public IEnumerable<DriverViewModel> GetAvailablesInRadious(double latitude, double longitude, int km)
         {
-            throw new NotImplementedException();
+            var drivers = GetAvailables();
+            return drivers.Where(m =>
+            m.Latitude != null
+            && m.Longitude != null
+            && distanceHelper.IsNear(latitude, longitude, m.Latitude ?? 0, m.Longitude ?? 0, km)); ;
         }
     }
 }
