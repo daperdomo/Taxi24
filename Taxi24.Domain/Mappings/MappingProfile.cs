@@ -15,6 +15,13 @@ namespace Taxi24.Domain.Mappings
         {
             CreateMap<Driver, DriverViewModel>().ReverseMap();
             CreateMap<Passenger, PassengerViewModel>().ReverseMap();
+            CreateMap<Invoice, InvoiceViewModel>().ReverseMap();
+
+            CreateMap<NewTripViewModel, Trip>();
+            CreateMap<Trip, TripViewModel>()
+                .ForMember(m => m.Passenger, m => m.MapFrom(mm => mm.Passenger.Name))
+                .ForMember(m => m.Driver, m => m.MapFrom(mm => mm.Driver.Name))
+                .ReverseMap();
         }
     }
 }

@@ -9,5 +9,7 @@ namespace Taxi24.Domain.Interfaces
     public interface IUnitOfWork
     {
         IDriverService DriverService { get; }
+        ITripService TripService { get; }
+        IInvoiceService InvoiceService { get; }
     }
 }

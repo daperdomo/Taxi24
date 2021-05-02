@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Taxi24.Infrastructure.Interfaces;
 
 #nullable disable
 
 namespace Taxi24.Domain.Models
 {
-    public partial class Trip
+    public partial class Trip : IBaseEntity
     {
         public Trip()
         {

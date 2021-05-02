@@ -9,7 +9,7 @@ using Taxi24.Domain.ViewModels;
 
 namespace Taxi24.Controllers
 {
-    public class PassengerController : CrudBaseController<Driver, DriverViewModel>
+    public class PassengerController : CrudBaseController<Passenger, PassengerViewModel>
     {
 
         [HttpGet]

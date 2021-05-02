@@ -11,13 +11,13 @@ namespace Taxi24.Infrastructure.DataAccess
 {
     public class Repository<T> : IRepository<T> where T : class, IBaseEntity
     {
-        private readonly DbContext _context;
+        public DbContext context { get; }
         public DbSet<T> Table { get; }
 
-        public Repository(DbContext context)
+        public Repository(DbContext _context)
         {
-            _context = context;
-            Table = context.Set<T>();
+            context = _context;
+            Table = _context.Set<T>();
         }
 
         public T GetById(int Id)
@@ -62,11 +62,11 @@ namespace Taxi24.Infrastructure.DataAccess
 
         public void Update(T entity)
         {
-            _context.Entry(entity).State = EntityState.Modified;
+            context.Entry(entity).State = EntityState.Modified;
         }
         public void SaveChanges()
         {
-            _context.SaveChanges();
+            context.SaveChanges();
         }
     }
 }

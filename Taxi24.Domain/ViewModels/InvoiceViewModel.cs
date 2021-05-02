@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using Taxi24.Infrastructure.Interfaces;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-#nullable disable
-
-namespace Taxi24.Domain.Models
+namespace Taxi24.Domain.ViewModels
 {
-    public partial class Invoice : IBaseEntity
+    public class InvoiceViewModel
     {
         public int Id { get; set; }
         public int? TripId { get; set; }
         public decimal? Amount { get; set; }
         public DateTime? Created { get; set; }
-
-        public virtual Trip Trip { get; set; }
     }
 }

@@ -7,6 +7,7 @@ namespace Taxi24.Infrastructure.Interfaces
 {
     public interface IRepository<T> where T : class, IBaseEntity
     {
+       DbContext context { get; }
         DbSet<T> Table { get; }
         IEnumerable<T> Get(Expression<Func<T, bool>> query);
         IEnumerable<T> ListAll();

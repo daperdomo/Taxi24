@@ -30,6 +30,6 @@ namespace Taxi24.Domain.Interfaces
         /// <param name="longitude">Longitude</param>
         /// <param name="km">Radious in KM</param>
         /// <returns>Driver availables neartest in radious</returns>
-        IEnumerable<DriverViewModel> Get3NearDrivers(double latitude, double longitude, int km)
+        IEnumerable<DriverViewModel> Get3NearDrivers(double latitude, double longitude, int km);
     }
 }
