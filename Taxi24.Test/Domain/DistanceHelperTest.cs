@@ -38,5 +38,13 @@ namespace Taxi24.Test.Domain
             bool isNotNear = distanceHelper.IsNear(latitudeFrom, longitudeFrom, latitudeTo, longitudeTo, km);
             Assert.IsFalse(isNotNear);
         }
+
+        [Test]
+        [TestCase(18.4923177, -69.8391991, 18.4827567, -69.9414236)]
+        public void GetDistance(double latitudeFrom, double longitudeFrom, double latitudeTo, double longitudeTo)
+        {
+            double distance = distanceHelper.GetDistance(latitudeFrom, longitudeFrom, latitudeTo, longitudeTo);
+            Assert.Greater(distance, 10);
+        }
     }
 }

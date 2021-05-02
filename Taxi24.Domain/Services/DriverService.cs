@@ -40,7 +40,13 @@ namespace Taxi24.Domain.Services
             return drivers.Where(m =>
             m.Latitude != null
             && m.Longitude != null
-            && distanceHelper.IsNear(latitude, longitude, m.Latitude ?? 0, m.Longitude ?? 0, km)); ;
+            && distanceHelper.IsNear(latitude, longitude, m.Latitude ?? 0, m.Longitude ?? 0, km));
+        }
+
+        public IEnumerable<DriverViewModel> Get3NearDrivers(double latitude, double longitude, int km)
+        {
+            var drivers = GetAvailablesInRadious(latitude, longitude, km);
+            return drivers.OrderBy(m => distanceHelper.GetDistance(latitude, longitude, m.Latitude ?? 0, m.Longitude ?? 0)).Take(3);
         }
     }
 }

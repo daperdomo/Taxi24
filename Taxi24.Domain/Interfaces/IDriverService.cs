@@ -23,5 +23,13 @@ namespace Taxi24.Domain.Interfaces
         /// <param name="km">Radious in KM</param>
         /// <returns>Driver availables in radious</returns>
         IEnumerable<DriverViewModel> GetAvailablesInRadious(double latitude, double longitude, int km);
+        /// <summary>
+        /// Get the 3 nearest availables drivers
+        /// </summary>
+        /// <param name="latitude">Latitude</param>
+        /// <param name="longitude">Longitude</param>
+        /// <param name="km">Radious in KM</param>
+        /// <returns>Driver availables neartest in radious</returns>
+        IEnumerable<DriverViewModel> Get3NearDrivers(double latitude, double longitude, int km)
     }
 }

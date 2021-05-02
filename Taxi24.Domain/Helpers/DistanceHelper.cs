@@ -8,14 +8,18 @@ namespace Taxi24.Domain.Helpers
 {
     public class DistanceHelper : IDistanceHelper
     {
+        public double GetDistance(double latitudFrom, double longitudeFrom, double latitudTo, double longitudeTo)
+        {
+            return 6371 * Math.Acos(Math.Cos(DegreeToRadian((90 - latitudFrom)))
+                      * Math.Cos(DegreeToRadian((90 - latitudTo)))
+                      + Math.Sin(DegreeToRadian((90 - latitudFrom)))
+                      * Math.Sin(DegreeToRadian((90 - latitudTo)))
+                      * Math.Cos(DegreeToRadian((longitudeFrom - longitudeTo))));
+        }
+
         public bool IsNear(double latitudFrom, double longitudeFrom, double latitudTo, double longitudeTo, int km)
         {
-            var d3 = 6371 * Math.Acos(Math.Cos(DegreeToRadian((90 - latitudFrom)))
-                    * Math.Cos(DegreeToRadian((90 - latitudTo)))
-                    + Math.Sin(DegreeToRadian((90 - latitudFrom)))
-                    * Math.Sin(DegreeToRadian((90 - latitudTo)))
-                    * Math.Cos(DegreeToRadian((longitudeFrom - longitudeTo))));
-            return d3 <= km;
+            return GetDistance(latitudFrom, longitudeFrom, latitudTo, longitudeTo) <= km;
         }
 
         private double DegreeToRadian(double angle)

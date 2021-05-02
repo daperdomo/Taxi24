@@ -14,6 +14,7 @@ namespace Taxi24.Domain.Mappings
         public MappingProfile()
         {
             CreateMap<Driver, DriverViewModel>().ReverseMap();
+            CreateMap<Passenger, PassengerViewModel>().ReverseMap();
         }
     }
 }
