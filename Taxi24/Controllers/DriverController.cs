@@ -11,6 +11,7 @@ namespace Taxi24.Controllers
 {
     public class DriverController : CrudBaseController<Driver, DriverViewModel>
     {
+        [HttpGet]
         public IActionResult GetAvailables()
         {
             return Ok(UnitOfWork.DriverService.GetAvailables());

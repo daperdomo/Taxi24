@@ -15,7 +15,7 @@ namespace Taxi24.Domain.Services
     {
         private readonly IRepository<Driver> driverRepository;
         private readonly IMapper mapper;
-       
+
         public DriverService(
             IRepository<Driver> _driverRepository,
             IMapper _mapper)
@@ -29,6 +29,11 @@ namespace Taxi24.Domain.Services
             return driverRepository.Table.Where(m => m.Available == true)
                 .ToList()
                 .Select(m => mapper.Map<DriverViewModel>(m));
+        }
+
+        public IEnumerable<DriverViewModel> GetAvailablesInRadious(double latitude, double longitude, int km)
+        {
+            throw new NotImplementedException();
         }
     }
 }

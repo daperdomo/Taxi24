@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxi24", "Taxi24\Taxi24.csproj", "{37B8C4BC-7DD0-43D9-BBF8-C0C4468EA7D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxi24", "Taxi24\Taxi24.csproj", "{37B8C4BC-7DD0-43D9-BBF8-C0C4468EA7D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxi24.Domain", "Taxi24.Domain\Taxi24.Domain.csproj", "{373DE0E9-F957-4A23-AAC1-C8823C1F029C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxi24.Domain", "Taxi24.Domain\Taxi24.Domain.csproj", "{373DE0E9-F957-4A23-AAC1-C8823C1F029C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxi24.Infrastructure", "Taxi24.Infrastructure\Taxi24.Infrastructure.csproj", "{865E0825-F963-4870-A8B5-77299196890E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taxi24.Infrastructure", "Taxi24.Infrastructure\Taxi24.Infrastructure.csproj", "{865E0825-F963-4870-A8B5-77299196890E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxi24.Test", "Taxi24.Test\Taxi24.Test.csproj", "{7CD25081-E512-4422-A57A-729ADFA13EEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{865E0825-F963-4870-A8B5-77299196890E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{865E0825-F963-4870-A8B5-77299196890E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{865E0825-F963-4870-A8B5-77299196890E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CD25081-E512-4422-A57A-729ADFA13EEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD25081-E512-4422-A57A-729ADFA13EEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD25081-E512-4422-A57A-729ADFA13EEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD25081-E512-4422-A57A-729ADFA13EEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
